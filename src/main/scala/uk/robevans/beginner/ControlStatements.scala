@@ -1,4 +1,4 @@
-package uk.robevans
+package uk.robevans.beginner
 
 object ControlStatements extends App {
 

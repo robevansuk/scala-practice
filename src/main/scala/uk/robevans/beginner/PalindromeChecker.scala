@@ -1,6 +1,4 @@
-package uk.robevans
-
-import java.security.SecureRandom
+package uk.robevans.beginner
 
 object PalindromeChecker extends App {
 
