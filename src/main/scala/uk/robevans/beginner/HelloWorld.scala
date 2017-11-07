@@ -5,7 +5,7 @@ object HelloWorld extends App {
   val helloWorld = "Hello World, for a second time!"
   val goodbye = "Goodbye, cruel world!"
 
-  def getHelloWorld() = {
+  def getHelloWorld = {
     "Hello World!"
   }
 
@@ -13,7 +13,7 @@ object HelloWorld extends App {
 
   def goodbye(msg  : String) = { println(msg) }
 
-  println(getHelloWorld())
+  println(getHelloWorld)
   println(helloWorld)
   printHelloWorld()
   goodbye(goodbye)
