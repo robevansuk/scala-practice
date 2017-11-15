@@ -2,6 +2,14 @@ package uk.robevans.intermediate
 
 object ListExamples extends App{
 
+  /**
+    * Array() - java equivalent to String[]
+    * List() - ~ java LinkedList
+    * Seq() - ~ java List<T> (interface)
+    * Vector() - java ArrayList
+    */
+
+
   val someList = List("one", "two", "three")
   val anotherList = List("four", "five")
   val concattedLists = someList ::: anotherList // List(one, two, three, four, five)

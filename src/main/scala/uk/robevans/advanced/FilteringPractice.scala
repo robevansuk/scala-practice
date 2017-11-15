@@ -27,7 +27,7 @@ object FilteringPractice extends App {
        if file.getName.endsWith("sbt")) println(file)
 
   /**
-    * nested iterations
+    * nested iterations and filtering
     * adding multiple <- clauses creates nested loops
     */
   println
@@ -39,7 +39,7 @@ object FilteringPractice extends App {
 
 
   /**
-    * yielding items from list whilst iterating over them
+    * yielding items from list with filtering
     */
   println
   println("List 'yielded' containing items >4:")
@@ -66,5 +66,17 @@ object FilteringPractice extends App {
     } yield number == 7   // results in: false, false, true, false
   for (item <- numbersGreaterThanFourAndEqualToSeven) print(item + " ")
   println("\b")
+
+
+  /**
+    * Yielding with for loops is useful for *transforming* from a list of Strings to a list of Ints, say.
+    */
+
+  /**
+    * while loops return unit (aka void) so comparing to a string will result in true. This
+    * can cause strange results since while( (line == file.readLine() ) != "") will result in
+    * an infinite loop as the result of reading a line and comparing it to a string will always be true.
+    * You have been warned.
+    */
 
 }
