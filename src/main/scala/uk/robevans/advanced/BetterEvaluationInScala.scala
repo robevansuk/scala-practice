@@ -9,7 +9,7 @@ class BetterEvaluationInScala {
       * updates to the value in order to be able to rely on it
       */
 
-    // non-functional way to determin a value - starting with a variable
+    // non-functional way to determine a value - starting with a variable
     var filename = "default.txt" // <-- var not val.
     if (!args.isEmpty)
       filename = args(0)

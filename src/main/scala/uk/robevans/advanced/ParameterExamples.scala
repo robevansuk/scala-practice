@@ -24,20 +24,23 @@ class ParameterExamples {
 
   // Example of how to lazily evaluate some argument supplied as a parameter.
   def assertSomething(predicate: => Boolean) = {
-    if (true && !predicate) {
-      throw IllegalArgumentException
+    if (false && !predicate) {
+      throw new IllegalArgumentException
     }
   }
 
   // Non-lazy evaluation of somethingElse (will blow up regardless because predicate will be eagerly evaluated)
   def assertSomethingElse(predicate: Boolean) = {
-    if (true && !predicate) {
-      throw IllegalArgumentException
+    if (false && !predicate) {
+      throw new IllegalArgumentException
     }
   }
 
-  assertSomething(5>3) // not evaluated until !predicate is called on
-  assertSomethingElse(5>3) // evaluated before method is called
+  /**
+    * Uncomment the below to run this example
+    */
+//  assertSomething(5>3) // not evaluated until !predicate is called on
+//  assertSomethingElse(5>3) // evaluated before method is called
 
 
 
