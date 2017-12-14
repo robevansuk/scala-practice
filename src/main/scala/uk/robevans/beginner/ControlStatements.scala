@@ -43,4 +43,6 @@ object ControlStatements extends App {
     print(s"$j ")
   println("\b")
 
+  if (1 >0) println("1 is bigger than 2")
+  else println("You should not be seeing this. This is not right, at all.")
 }

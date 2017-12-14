@@ -1,6 +1,6 @@
 package uk.robevans.advanced2
 
-class Subclass2IsCleanerAndNonReassignable(override val name: String) extends BaseClass1 {
+class Subclass2IsCleanerAndNonReassignable(override val name: String) extends BaseClass1(name) {
 
   /**
     * in this example the name is supplied as a constructor parameter.

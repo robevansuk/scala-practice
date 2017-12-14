@@ -1,6 +1,6 @@
 package uk.robevans.advanced2
 
-class Subclass1(name_value: String) extends BaseClass1 {
+class Subclass1(name_value: String) extends BaseClass1(name_value) {
 
 
   // overriding a method name with a value is a trait of Scala only because methods/fields share the same namespace
