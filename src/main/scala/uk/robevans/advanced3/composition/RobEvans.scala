@@ -1,4 +1,4 @@
-package uk.robevans.advanced3
+package uk.robevans.advanced3.composition
 
 /**
   * a class can only extend a single object however

@@ -1,4 +1,4 @@
-package uk.robevans.advanced3
+package uk.robevans.advanced3.composition
 
 /**
   * traits have no class parameters
