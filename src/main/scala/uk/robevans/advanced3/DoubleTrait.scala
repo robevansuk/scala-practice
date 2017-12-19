@@ -11,7 +11,11 @@ package uk.robevans.advanced3
   * These types of traits are known as Stackable Modifiers.
   * DoubleTrait becomes a subclasse of the class that utilises it.
   *
+  * In general:
+  * use a trait when the behaviour will be shared/reused/mixed in
+  * use an object/singleton/concrete class when the behaviour is not needed elsewhere/reused
+  * use a class when you want to inherit and interface a class
   */
-trait DoubleTrait extends IntQueue[Int] {
+trait DoubleTrait extends DefaultIntQueue {
   abstract override def put(x: Int) = { super.put(2 * x) }
 }
