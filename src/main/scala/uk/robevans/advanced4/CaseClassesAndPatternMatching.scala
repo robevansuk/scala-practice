@@ -37,4 +37,27 @@ object CaseClassesAndPatternMatching extends App {
   println(doesClassMatch(SomeCaseClass("hello")))
   println(doesClassMatch(SomeCaseClass("goodbye")))
   println(doesClassMatch(SomeCaseClass("blah")))
+
+  def typeMatcher(`class`: Any) = {
+    `class` match {
+      case s: SomeCaseClass => println(s"found SomeCaseClass. name: '$s'")
+      case someString: String => println(s"found a String: '$someString'")
+      case _ => println(s"Error: -1")
+    }
+  }
+
+  typeMatcher(SomeCaseClass("I'm a case Class"))
+  typeMatcher("I am a STRING")
+  typeMatcher(5)
+
+  def patternMatchAssignment(`class`: Any) = {
+    `class` match {
+      case SomeCaseClass(e @ _) => println(e) // assign whatever positional param is passed to e (using @)
+      case _ => println("Unknown")
+
+    }
+  }
+
+  patternMatchAssignment(SomeCaseClass("SomeClass"))
+  patternMatchAssignment("-1")
 }
