@@ -20,10 +20,10 @@ object ControlStatements extends App {
     println("\b")
   }
 
-  override val args = Array("1", "2", "3", "3", "4", "5", "6", "7", "7", "8", "8")
+  val someArgs = Array("1", "2", "3", "3", "4", "5", "6", "7", "7", "8", "8")
 
-  doAForLoop(args)
-  doAWhileLoop(args)
+  doAForLoop(someArgs)
+  doAWhileLoop(someArgs)
 
   var i :Int = 0
   print("doWhile loop: ")

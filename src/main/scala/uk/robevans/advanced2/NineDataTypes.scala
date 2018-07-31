@@ -28,7 +28,7 @@ class NineDataTypes {
   x eq y // true
   x ne y // false - not equal to
 
-  val xHash = x##
+  val xHash = x
 
 
 

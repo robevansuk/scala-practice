@@ -8,6 +8,7 @@ object TryCatchInScala extends App {
   try {
     // Use the file here
     val f = new FileReader("input.txt")
+    f.read()
   } catch {
     case e : FileNotFoundException => println("1. File Not Found")
     case e : IOException => println("2. File no longer there!")

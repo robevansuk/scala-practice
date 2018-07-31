@@ -6,7 +6,7 @@ package uk.robevans.advanced3.composition
   * well defined, encapsulated functionality. This
   * enables us to turn thin interfaces into rich interfaces.
   * For one trait use 'extends', if you are adding many traits
-  * after a single extends use, use 'with Bantz'
+  * after a single 'extends', use 'with Bantz'
   */
 class RobEvans extends Bantz {
 

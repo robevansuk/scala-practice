@@ -1,5 +1,6 @@
 package uk.robevans.intermediate.fractions
 
+import scala.language.implicitConversions
 /**
   * Class definition of a rational number - class name is more descriptive
   * of the concept I'm learning rather than the class
@@ -31,9 +32,10 @@ class PracticeClass(n: Int, d: Int) {
 
 object PracticeClass extends App {
     // This is essentially an IMPLICIT CONVERTER
-    // This will convert instances of int to instances of PracticeClass
-    // This will enable us to carry out our add method on practice class instances
-    // and convert integers into instances of practice class so we can
+    // this will add a PracticeClass type to "implicit scope". This scope can be
+    // accessed anywhere inside the application.
+    // This implicit method will convert instances of int to instances of PracticeClass
+    // This will enable us to carry out our add method
     // write 2.add(PracticeClass) or PracticeClass.add(2).
     // or 2 + PracticeClass or PracticeClass + 2
     // Apply implicit converters when they're needed (ie here in the companion class, not the object blueprint)

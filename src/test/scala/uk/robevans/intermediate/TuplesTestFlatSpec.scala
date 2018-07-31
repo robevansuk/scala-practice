@@ -17,6 +17,7 @@ class TuplesTestFlatSpec extends FlatSpec with Matchers {
   }
 
   "A map" must "map A to B" in {
-    Map("A" -> "B", "C" -> "D") should contain
+    val aMap = Map("A" -> "B", "C" -> "D")
+    aMap.get("A") should be ("B")
   }
 }

@@ -1,6 +1,6 @@
 package uk.robevans.intermediate
 
-object ListExamples extends App{
+object ListExamples extends App {
 
   /**
     * Array() - java equivalent to String[]

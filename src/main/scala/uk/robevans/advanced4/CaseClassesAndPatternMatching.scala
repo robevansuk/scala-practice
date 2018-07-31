@@ -23,12 +23,13 @@ package uk.robevans.advanced4
   *
   */
 case class SomeCaseClass(name: String)
+case class Addition(x: Int, y: Int)
 
 object CaseClassesAndPatternMatching extends App {
 
   def doesClassMatch(`class`: SomeCaseClass): String = {
     `class` match {
-      case SomeCaseClass("hello") => "I found 'hello'"
+      case SomeCaseClass("hello") => s"I found '${`class`.name}'"
       case SomeCaseClass("goodbye") => "I found 'goodbye'"
       case _ => "I didn't find much of anything!"
     }
@@ -60,4 +61,33 @@ object CaseClassesAndPatternMatching extends App {
 
   patternMatchAssignment(SomeCaseClass("SomeClass"))
   patternMatchAssignment("-1")
+
+  // pattern guards - perform checks on a pattern match so we can check variables are the same e.g.
+  def patternMatchWhenVariablesAreSameValue(x: Int, y: Int): Unit = {
+    Addition(x, y) match {
+      case Addition(i, j) if i == j => multiply(i, 2) // here if i==j is the guard.
+      case _ => add(x, y)
+    }
+  }
+
+  def add(x: Int, y: Int): Unit = {
+    x + y
+  }
+
+  def multiply(x: Int, y: Int) = {
+    x * y
+  }
+
+  def capitalsMap = Map("France" -> "Paris", "Spain" -> "Madrid", "USA" -> "Washington")
+
+  for ((country, city) <- capitalsMap) {
+    println("The capital of " + country + " is " + city)
+  }
+
+  val opGroups = Array(Set("a", "b"), Set("c", "d"), Set("e", "f"))
+  val assocs = for {
+    i <- 0 until opGroups.length // generates an index for every entry of opGroups
+    opGroup <- opGroups(i) // generator for every operator in opGroups
+  } yield opGroup -> i // creates a new map of opgroup -> int
+  assocs.toMap
 }

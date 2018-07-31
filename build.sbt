@@ -4,13 +4,35 @@ version := "0.1"
 
 scalaVersion := "2.12.4"
 
-resolvers ++= Seq("snapshots" at "http://oss.sonatype.org/content/repositories/snapshots",
+scalacOptions ++= Seq("-unchecked",
+  "-deprecation",
+  "-feature",
+  "-Xfatal-warnings",
+  "-Xlint:_,-missing-interpolator",
+  "-Ypartial-unification")
+
+resolvers ++= Seq(
+  "snapshots" at "http://oss.sonatype.org/content/repositories/snapshots",
   "releases" at "http://oss.sonatype.org/content/repositories/releases",
-  "defaultMavenRepo" at "http://repo1.maven.org/maven2")
+  "defaultMavenRepo" at "http://repo1.maven.org/maven2",
+//  "MarkLogic Repository" at "http://developer.marklogic.com/maven2",
+  "Readytalk Bintray" at "http://dl.bintray.com/readytalk/maven",
+  "jitpack" at "https://jitpack.io"
+)
 resolvers ++= Seq("scalaz-bintray" at "https://dl.bintray.com/scalaz/releases")
 
-libraryDependencies ++= "org.specs2"    %% "specs2-core"    % "4.0.0" % "test"
-libraryDependencies ++= "org.scalactic" %% "scalactic"      % "3.0.4"
-libraryDependencies += "org.scalatest"  %% "scalatest_2.13.0-M2" % "3.0.4"
+lazy val Http4s = Seq(
+  "org.http4s" %% "http4s-blaze-server",
+  "org.http4s" %% "http4s-circe",
+  "org.http4s" %% "http4s-dsl"
+).map(_ % "0.18.15")
+
+libraryDependencies += "org.specs2" %% "specs2-core" % "4.0.0" % "test"
+libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.4"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5"
+libraryDependencies += "io.circe"        %% "circe-literal" % "0.9.2"
+libraryDependencies ++= Http4s
+
+
 
 scalacOptions in Test ++= Seq("-Yrangepos")

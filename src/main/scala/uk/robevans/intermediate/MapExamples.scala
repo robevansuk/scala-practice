@@ -65,5 +65,7 @@ object MapExamples extends App {
 
   printArgs(anotherMap)
 
+  printArgs(anotherMap + ("10" -> "ten"))
+
 
 }

@@ -19,7 +19,7 @@ object AssertMethods extends App {
   def doSomeEnsureChecking(x: Int, y: Int): String = {
     val success = "success"
     val fail = "fail"
-    var result = None
+//    var result = None
     if (x <= y) { success }
     else { fail } ensuring (_ == success)
   }
