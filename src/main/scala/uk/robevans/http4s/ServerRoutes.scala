@@ -12,9 +12,9 @@ class ServerRoutes[F[_]: Effect](serverConfig: Config) extends Http4sDsl[F] {
   val service : HttpService[F] = {
   HttpService[F] {
     case GET -> Root / "hello" =>
-      Ok(json"""{}""")
+      Ok(json"""{"helllooooo": "world"}""")
     case GET -> Root / "world" =>
-      Ok(json"""{}""")
+      Ok(json"""{"World":"Hello"}""")
     }
   }
 
