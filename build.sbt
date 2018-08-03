@@ -24,7 +24,8 @@ resolvers ++= Seq("scalaz-bintray" at "https://dl.bintray.com/scalaz/releases")
 lazy val Http4s = Seq(
   "org.http4s" %% "http4s-blaze-server",
   "org.http4s" %% "http4s-circe",
-  "org.http4s" %% "http4s-dsl"
+  "org.http4s" %% "http4s-dsl",
+  "org.http4s" %% "http4s-blaze-client"
 ).map(_ % "0.18.15")
 
 libraryDependencies += "org.specs2" %% "specs2-core" % "4.0.0" % "test"
