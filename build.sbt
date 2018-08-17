@@ -28,11 +28,11 @@ lazy val Http4s = Seq(
   "org.http4s" %% "http4s-blaze-client"
 ).map(_ % "0.18.15")
 
-libraryDependencies += "org.specs2" %% "specs2-core" % "4.0.0" % "test"
-libraryDependencies += "org.scalactic" %% "scalactic" % "3.0.4"
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.5"
-libraryDependencies += "io.circe"        %% "circe-literal" % "0.9.2"
-libraryDependencies += "ch.qos.logback"  %  "logback-classic"     % "1.2.3"
+libraryDependencies += "org.specs2"     %% "specs2-core"     % "4.0.0" % "test"
+libraryDependencies += "org.scalactic"  %% "scalactic"       % "3.0.4"
+libraryDependencies += "org.scalatest"  %% "scalatest"       % "3.0.5"
+libraryDependencies += "io.circe"       %% "circe-literal"   % "0.9.2"
+libraryDependencies += "ch.qos.logback" %  "logback-classic" % "1.2.3"
 
 libraryDependencies ++= Http4s
 
