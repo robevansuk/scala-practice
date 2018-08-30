@@ -32,6 +32,7 @@ class OptionFunctorTest extends FunSpec with Matchers {
       result should be (Some(40))
     }
 
+    implicit val implicitListFunctor = new ListFunctor
     // Committing a failing test that requires the functor for Lists
     it("do math for Lists") {
       val result = maths.doMath(List(9, 19, 29))
@@ -39,4 +40,8 @@ class OptionFunctorTest extends FunSpec with Matchers {
     }
   }
 
+}
+
+class ListFunctor extends Functor[List] {
+  override def map[A, B](fa: List[A])(f: A => B): List[B] = fa.map(f)
 }
