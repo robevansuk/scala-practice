@@ -25,11 +25,17 @@ class OptionFunctorTest extends FunSpec with Matchers {
     // the function DoSomeMaths.doMath takes an implicit Functor
     // therefore we must declare a Functor in the implicit scope
     implicit val implicitOptionFunctor = new OptionFunctor()
+    val maths = new DoSomeMaths
 
-    it("do math"){
-      val maths = new DoSomeMaths
+    it("do math for Options"){
       val result = maths.doMath(Option(19))
       result should be (Some(40))
+    }
+
+    // Committing a failing test that requires the functor for Lists
+    it("do math for Lists") {
+      val result = maths.doMath(List(9, 19, 29))
+      result should be (List(20, 40, 60))
     }
   }
 
