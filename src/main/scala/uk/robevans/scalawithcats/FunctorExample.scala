@@ -31,3 +31,9 @@ trait Functor[F[_]] {
 //
 //val f = (x: Int) => x + 2
 //val f2 = f.map(f)
+
+class MyFunctor[A] extends Functor[Option[A]] {
+  override def map[A, B](fa: Option[A])(f: A => B): Option[B] = {
+    fa.map(f)
+  }
+}
