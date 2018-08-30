@@ -5,6 +5,8 @@ import scala.language.higherKinds
 /**
   * functors enable mapping F[_].map()
   * and Lifting Given A => B, we can get F[a] => F[B]
+  *
+  * Here: F[_] just tells us that Functor accepts a container type.
   */
 trait Functor[F[_]] {
   def map[A, B](fa: F[A])(f: A => B): F[B]
@@ -39,3 +41,4 @@ class OptionFunctor extends Functor[Option] {
     functorOfA.map(f)
   }
 }
+
