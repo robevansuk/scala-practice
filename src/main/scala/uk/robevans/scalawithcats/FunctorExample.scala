@@ -1,5 +1,7 @@
 package uk.robevans.scalawithcats
 
+import scala.language.higherKinds
+
 /**
   * functors enable mapping F[_].map()
   * and Lifting Given A => B, we can get F[a] => F[B]
@@ -32,8 +34,8 @@ trait Functor[F[_]] {
 //val f = (x: Int) => x + 2
 //val f2 = f.map(f)
 
-class MyFunctor[A] extends Functor[Option[A]] {
-  override def map[A, B](fa: Option[A])(f: A => B): Option[B] = {
-    fa.map(f)
+class OptionFunctor extends Functor[Option] {
+  override def map[A, B](functorOfA: Option[A])(f: A => B): Option[B] = {
+    functorOfA.map(f)
   }
 }
