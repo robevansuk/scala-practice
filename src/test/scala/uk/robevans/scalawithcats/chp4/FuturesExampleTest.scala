@@ -7,7 +7,7 @@ class FuturesExampleTest extends FunSpec with Matchers {
   describe("Monadic Futures") {
     it("") {
       val futuresExample = new FuturesExample
-      val result = futuresExample.doSomethingLongRunning()
+      val result = futuresExample.doSomethingReallyLongRunning()
       result should be (4)
     }
   }
