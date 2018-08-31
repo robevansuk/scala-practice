@@ -14,7 +14,7 @@ class CatsMonadsTest extends FunSpec with Matchers {
     it("flatMaps over the OptionCatsMonad") {
       val optionCatsMonads = new OptionCatsMonads
       val input = Option(22)
-      val result = optionCatsMonads.flatMap[Int, String](input, (i => Some(s"$i!!!")))
+      val result = optionCatsMonads.flatMap[Int, String](input)(i => Some(s"$i!!!"))
       result should be (Option("22!!!"))
     }
   }
