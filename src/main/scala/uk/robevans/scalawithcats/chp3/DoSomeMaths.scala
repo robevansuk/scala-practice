@@ -1,4 +1,4 @@
-package uk.robevans.scalawithcats
+package uk.robevans.scalawithcats.chp3
 
 import scala.language.higherKinds
 
