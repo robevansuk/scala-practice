@@ -1,5 +1,7 @@
 package uk.robevans.scalawithcats.chp4
 
+import cats.Monad
+import cats.instances.option._
 import org.scalatest.{FunSpec, Matchers}
 
 class CatsMonadsTest extends FunSpec with Matchers {
@@ -16,6 +18,17 @@ class CatsMonadsTest extends FunSpec with Matchers {
       val input = Option(22)
       val result = optionCatsMonads.flatMap[Int, String](input)(i => Some(s"$i!!!"))
       result should be (Option("22!!!"))
+    }
+  }
+
+  describe("Cats Monad") {
+    it("Monad[Option].pure") {
+      val optionMonad = Monad[Option].pure(22)
+      optionMonad should be (Some(22))
+    }
+    it("Monad[Option].flatMap") {
+      val optionMonad = Monad[Option].pure(25)
+      optionMonad.flatMap[String](i => Some(s"${i}TTT")) should be (Some("25TTT"))
     }
   }
 
