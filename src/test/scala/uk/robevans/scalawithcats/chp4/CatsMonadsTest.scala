@@ -1,8 +1,13 @@
 package uk.robevans.scalawithcats.chp4
 
 import cats.Monad
+import cats.instances.future._
 import cats.instances.option._
 import org.scalatest.{FunSpec, Matchers}
+
+import scala.concurrent.ExecutionContext.Implicits.global
+import scala.concurrent.duration._
+import scala.concurrent.{Await, Future}
 
 class CatsMonadsTest extends FunSpec with Matchers {
 
@@ -29,6 +34,14 @@ class CatsMonadsTest extends FunSpec with Matchers {
     it("Monad[Option].flatMap") {
       val optionMonad = Monad[Option].pure(25)
       optionMonad.flatMap[String](i => Some(s"${i}TTT")) should be (Some("25TTT"))
+    }
+  }
+
+  describe("Cats Future Monad") {
+    it("works with standard implicit, global ExecutionContext") {
+      val futureMonad = Monad[Future]
+      val future = futureMonad.flatMap(futureMonad.pure(300))(_ => Future("1"))
+      Await.result(future, 1.second) should be ("1")
     }
   }
 
